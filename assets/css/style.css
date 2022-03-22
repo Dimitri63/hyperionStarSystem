@@ -1,0 +1,27 @@
+body {
+    background-image: url("../../assets/img/image/17520.jpg");
+    color: aliceblue;
+}
+
+.title {
+    height: 200px;
+    background-image: url("../../assets/img/image/background.jpg");
+    background-size: cover;
+}
+
+.card-right {
+    position:absolute;
+    left:60%;
+    z-index:2;
+    color: aliceblue;
+    font-size: 0.7em;
+    background-color: rgba(100, 100, 100, 0.1);
+    background-size: 30px;
+    padding-left: 10px;
+    border: darkblue groove 1px;
+}
+
+.card-right ul{
+    font-size: 0.91em;
+}
+
