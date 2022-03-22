@@ -1,5 +1,6 @@
 body {
     background-image: url("../../assets/img/image/17520.jpg");
+    background-attachment: fixed;
     color: aliceblue;
 }
 

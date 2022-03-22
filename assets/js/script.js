@@ -454,7 +454,6 @@ const planets = [
 const container = document.querySelector("#planets");
 const selectSector = document.querySelector("#selectSector");
 
-let filterSector = selectSector.value;
 generateCard("null");
 
 
@@ -476,7 +475,15 @@ function generateCard(filter){
 
       const divCard = document.createElement('div');
       divCard.classList.add("card", "bg-dark", "text-white", "shadow");
-      divCard.style.maxWidth = "520px";
+      divCard.style.maxWidth = "540px";
+      if (planet.Secteur === "Saturn"){
+        divCard.style.border = "1px outset green";
+      } else if (planet.Secteur === "Caldera"){
+        divCard.style.border = "1px outset orange";
+      }
+      else if (planet.Secteur === "Bylen"){
+        divCard.style.border = "1px outset red";
+      }
       divCol.append(divCard);
 
       const img = document.createElement('img');
@@ -511,11 +518,11 @@ function generateCard(filter){
       divCardOverlay.append(planetSettings);
 
       const planetGravity = document.createElement('li');
-      planetGravity.innerText = `Gravité : ${planet.Gravité}`;
+      planetGravity.innerText = `Gravité : ${planet.Gravité} g`;
       planetSettings.append(planetGravity);
 
       const planetDiam = document.createElement('li');
-      planetDiam.innerText = `Diamètre : ${planet.Diametre}`;
+      planetDiam.innerText = `Diamètre : ${planet.Diametre} km`;
       planetSettings.append(planetDiam);
 
       const planetResources = document.createElement('li');
@@ -554,7 +561,7 @@ function generateCard(filter){
       } else if (planet.Atmosphère === "Elevé"){
         planetAtmosphere.innerHTML = `Atmosphère : <b style="color: gold">${planet.Atmosphère}</b>`;
       }
-      planetSettings.append(planetGround);
+      planetSettings.append(planetAtmosphere);
 
       const planetTemperature = document.createElement('li');
       planetTemperature.innerHTML = `Température : <b>${planet.Température}</b>`;
